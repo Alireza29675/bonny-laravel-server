@@ -40,7 +40,7 @@ r.style({
   }
 });
 
-class BonnyLarvel {
+class BonnyLaravel {
 
   constructor() {
     console.log(r.render(`
@@ -79,6 +79,9 @@ class BonnyLarvel {
   }
 
   artisanServe() {
+
+    this.artisanGenerateKey();
+
     const serve = spawn('php', ['artisan', 'serve']);
 
     serve.stdout.on('data', (data) => {
@@ -89,6 +92,12 @@ class BonnyLarvel {
       console.log(r.render(`<error> ${data} </error>`));
     });
   }
+
+  artisanGenerateKey() {
+    exec('php artisan key:generate');
+    console.log(r.render(`<success>New Security Key Generated! 🔐</success>`));
+  }
+
 }
 
-const app = new BonnyLarvel();
+const app = new BonnyLaravel();
