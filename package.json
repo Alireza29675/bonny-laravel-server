@@ -6,6 +6,7 @@
     "start": "node index.js"
   },
   "devDependencies": {
+    "bonny-cli-renderer": "^1.0.1",
     "bootstrap-sass": "^3.0.0",
     "gulp": "^3.9.1",
     "laravel-elixir": "^5.0.0",
